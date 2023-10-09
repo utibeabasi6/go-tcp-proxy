@@ -1,0 +1,5 @@
+bpffs
+config.json
+Dockerfile
+fly.toml
+*-CHALLENGE*
