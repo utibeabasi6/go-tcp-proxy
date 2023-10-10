@@ -24,9 +24,10 @@ func main() {
 
 	for _, app := range apps.Apps {
 		connChannel := make(chan net.Conn)
+		log.Println("Starting listeners for", app.Name)
 		for _, port := range app.Ports {
 			server := Server{Port: port, Targets: app.Targets}
-			log.Println("Listening on port ", port)
+			log.Println("Listening on port", port)
 			go server.Listen(connChannel)
 		}
 
